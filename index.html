@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<!-- Agregamos scroll-smooth y scroll-pt-20 para que el menú no tape los títulos al bajar -->
+<html lang="es" class="scroll-smooth scroll-pt-20">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechSquad Academy | Simulador de Experiencia Real</title>
+    <!-- Tailwind CSS para estilos rápidos y responsivos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Configuración de colores de marca basados en el PDF -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            indigo: '#4338ca', /* Autoridad y confianza */
+                            orange: '#f97316', /* Comunidad y energía */
+                            green: '#10b981',  /* Crecimiento y metodologías ágiles */
+                            dark: '#0f172a',
+                            light: '#f8fafc'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-slate-800 bg-brand-light antialiased">
+
+    <!-- Navegación Fija (Estática en la pantalla) -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-sm fixed w-full z-50 top-0 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo redirecciona al inicio -->
+                <a href="#inicio" class="flex-shrink-0 flex items-center gap-2 hover:opacity-80 transition-opacity">
+                    <i class="fa-solid fa-code-branch text-brand-indigo text-2xl"></i>
+                    <span class="font-bold text-2xl tracking-tight text-brand-dark">TechSquad<span class="text-brand-orange">.</span></span>
+                </a>
+                
+                <!-- Menú Central (Versión Escritorio) -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#metodologia" class="text-slate-600 hover:text-brand-indigo font-medium transition-colors">Metodología</a>
+                    <a href="#beneficios" class="text-slate-600 hover:text-brand-indigo font-medium transition-colors">Distintivos</a>
+                    <a href="#aplicar" class="text-slate-600 hover:text-brand-indigo font-medium transition-colors">Próxima Cohorte</a>
+                    
+                    <!-- Botón CTA Principal en Navbar -->
+                    <a href="#aplicar" class="bg-brand-indigo text-white px-6 py-2.5 rounded-lg font-semibold shadow-lg shadow-indigo-500/30 hover:bg-indigo-800 transition-all transform hover:-translate-y-0.5">
+                        Aplicar ahora
+                    </a>
+                </div>
+
+                <!-- Botón Menú Móvil (Hamburguesa) -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-slate-600 hover:text-brand-indigo focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel del Menú Móvil (Desplegable) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 shadow-xl absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#metodologia" class="block px-3 py-3 text-slate-600 hover:text-brand-indigo hover:bg-slate-50 rounded-md font-medium border-b border-slate-50">Metodología</a>
+                <a href="#beneficios" class="block px-3 py-3 text-slate-600 hover:text-brand-indigo hover:bg-slate-50 rounded-md font-medium border-b border-slate-50">Distintivos</a>
+                <a href="#aplicar" class="block px-3 py-3 text-slate-600 hover:text-brand-indigo hover:bg-slate-50 rounded-md font-medium mb-4">Próxima Cohorte</a>
+                
+                <a href="#aplicar" class="block w-full text-center bg-brand-indigo text-white px-6 py-3 rounded-lg font-semibold shadow-md">
+                    Aplicar ahora
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Inicio) -->
+    <section id="inicio" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-dark text-white">
+        <!-- Decoración de fondo -->
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full opacity-10 pointer-events-none">
+            <svg class="absolute right-0 top-0 h-full w-1/2" fill="none" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <polygon fill="currentColor" points="50,0 100,0 50,100 0,100" />
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="lg:w-2/3">
+                <div class="inline-block px-4 py-1.5 rounded-full bg-indigo-900/50 border border-indigo-700 text-brand-green font-semibold text-sm mb-6 shadow-sm">
+                    <i class="fa-solid fa-bolt mr-2"></i> Rompe la Paradoja de la Experiencia
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                    No te adaptas al curso; <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-yellow-400">el curso se adapta a ti.</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-300 mb-10 max-w-3xl leading-relaxed">
+                    ¿Terminaste la universidad y te piden experiencia para tu primer empleo? Únete a nuestro simulador de vida real. Grupos de máximo 15 personas, Code Reviews estrictos y metodologías ágiles.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#aplicar" class="bg-brand-orange hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-bold text-center shadow-lg shadow-orange-500/30 transition-all transform hover:-translate-y-1">
+                        Ver opciones de Admisión
+                    </a>
+                    <a href="#metodologia" class="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-lg text-lg font-medium text-center backdrop-blur-sm transition-all">
+                        Nuestra Metodología
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: Metodología -->
+    <section id="metodologia" class="py-20 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-brand-dark mb-4 text-brand-indigo">Aprendizaje Basado en Cohortes</h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">Nuestro secreto no es el temario, es la logística de impartición grupal diseñada para escalar sin perder el toque humano.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+                <div>
+                    <div class="w-16 h-16 mx-auto bg-white border border-slate-200 rounded-full flex items-center justify-center mb-6 shadow-sm">
+                        <i class="fa-solid fa-users text-2xl text-brand-dark"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Máximo 15 Alumnos</h3>
+                    <p class="text-slate-600">Nada de salones virtuales masificados. Te conocemos por tu nombre, sabemos tus objetivos y adaptamos el ritmo a tu aprendizaje.</p>
+                </div>
+                <div>
+                    <div class="w-16 h-16 mx-auto bg-white border border-slate-200 rounded-full flex items-center justify-center mb-6 shadow-sm">
+                        <i class="fa-solid fa-people-group text-2xl text-brand-dark"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Micro-segmentación en Squads</h3>
+                    <p class="text-slate-600">Te agrupamos internamente con compañeros de nivel similar para asignar retos específicos. Los avanzados no se aburren, los principiantes no se frustran.</p>
+                </div>
+                <div>
+                    <div class="w-16 h-16 mx-auto bg-white border border-slate-200 rounded-full flex items-center justify-center mb-6 shadow-sm">
+                        <i class="fa-solid fa-list-check text-2xl text-brand-dark"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Acompañamiento Ágil</h3>
+                    <p class="text-slate-600">Implementamos ceremonias ágiles (Dailies y Check-ins semanales). Así aprendes SCRUM de forma práctica mientras construyes tu portafolio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Distintivos Section -->
+    <section id="beneficios" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-brand-dark mb-4">La industria no busca tutoriales,<br>busca Ingenieros de Software.</h2>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">Olvídate de los videos pregrabados. Así es como garantizamos que consigas el nivel que exigen las mejores empresas tech.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tarjeta 1 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-indigo transition-colors">
+                        <i class="fa-solid fa-code-pull-request text-2xl text-brand-indigo group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Code Reviews "Silicon Valley"</h3>
+                    <p class="text-slate-600">No hay calificaciones. Haremos Pull Requests reales en GitHub revisando línea por línea tu Clean Code y Arquitectura.</p>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-orange transition-colors">
+                        <i class="fa-solid fa-user-group text-2xl text-brand-orange group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Pair Programming</h3>
+                    <p class="text-slate-600">Desde el día 1 tendrás un "Accountability Partner". Trabajarán juntos en Squads resolviendo problemas reales, reduciendo la frustración.</p>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-green transition-colors">
+                        <i class="fa-solid fa-microphone-lines text-2xl text-brand-green group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Mock Interviews 1 a 1</h3>
+                    <p class="text-slate-600">Tu proyecto final concluye con un Simulacro de Entrevista Técnica individual. Pierde el miedo y prepárate para los reclutadores IT.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Garantía Cero Atrasos -->
+    <section class="py-16 bg-brand-indigo">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 bg-indigo-800/50 p-8 rounded-3xl border border-indigo-500/30">
+                <div class="flex-shrink-0 mx-auto md:mx-0">
+                    <i class="fa-solid fa-shield-halved text-6xl text-brand-orange"></i>
+                </div>
+                <div class="text-center md:text-left flex-grow text-white">
+                    <h3 class="text-2xl font-bold mb-2">Garantía "Cero Atrasos"</h3>
+                    <p class="text-indigo-100 text-lg">¿Tuviste una emergencia y faltaste a clase? Te recupero 20 minutos de clase 1 a 1 por cada sesión faltante. Aquí nadie se queda atrás.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- El Filtro / CTA Final -->
+    <section id="aplicar" class="py-24 bg-slate-50 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark mb-6">Únete a la próxima Cohorte</h2>
+            <p class="text-lg md:text-xl text-slate-600 mb-10">Cupos limitados a <strong>15 personas</strong> para garantizar mentoría ultra-personalizada. La admisión es por diagnóstico.</p>
+            
+            <div class="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-slate-200">
+                <h3 class="text-2xl font-bold text-slate-800 mb-6">Paso 1: Aplica a la Academia</h3>
+                <p class="text-slate-600 mb-8">Elige cómo prefieres contactarnos. Puedes llenar nuestro formulario rápido o escribirnos directo por WhatsApp para resolver tus dudas.</p>
+                
+                <!-- Botones de Google Forms y WhatsApp -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    
+                    <!-- Botón Formulario de Google -->
+                    <a href="TU_ENLACE_DE_GOOGLE_FORMS_AQUI" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-brand-dark hover:bg-slate-800 text-white px-8 py-4 rounded-xl text-lg font-bold shadow-lg transition-all transform hover:scale-105 flex items-center justify-center gap-3">
+                        <i class="fa-brands fa-google"></i> Llenar Formulario
+                    </a>
+
+                    <!-- Botón Mensaje Personalizado WhatsApp -->
+                    <a href="https://wa.me/TU_NUMERO_AQUI?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20la%20pr%C3%B3xima%20cohorte%20del%20simulador%20TechSquad." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-[#25D366] hover:bg-[#20bd5a] text-white px-8 py-4 rounded-xl text-lg font-bold shadow-lg transition-all transform hover:scale-105 flex items-center justify-center gap-3">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i> Chatear por WhatsApp
+                    </a>
+
+                </div>
+                
+                <p class="mt-6 text-sm text-slate-500"><i class="fa-solid fa-lock text-brand-green mr-1"></i> Al completar tu diagnóstico recibirás al instante nuestro Welcome Kit Digital en Notion.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark border-t border-slate-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-code-branch text-brand-indigo text-xl"></i>
+                    <span class="font-bold text-xl text-white">TechSquad<span class="text-brand-orange">.</span></span>
+                </div>
+                <div class="text-slate-400 text-sm text-center md:text-left">
+                    © 2026 TechSquad Academy. Mentoría en Ingeniería de Software.
+                </div>
+                <div class="flex space-x-6 text-slate-400">
+                    <a href="#" class="hover:text-brand-indigo transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
+                    <a href="#" class="hover:text-brand-indigo transition-colors"><i class="fa-brands fa-discord text-xl"></i></a>
+                    <a href="#" class="hover:text-brand-indigo transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/TU_NUMERO_AQUI?text=Hola,%20tengo%20una%20duda%20sobre%20las%20mentor%C3%ADas%20de%20TechSquad." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-[#20bd5a] hover:scale-110 transition-all z-50">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- SCRIPT DE INTERACCIÓN (Menú Móvil y Scroll Suave) -->
+    <script>
+        // Lógica para abrir/cerrar el menú móvil
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
+        const mobileLinks = menu.querySelectorAll('a');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            
+            // Cambiar el ícono de hamburguesa a "X" al abrir
+            if(menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        });
+
+        // Cerrar el menú cuando se hace clic en un enlace
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Scroll suave nativo mejorado
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
